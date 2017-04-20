@@ -6784,3 +6784,9 @@ body {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.navbar-inverse .navbar-social-twitter:hover,
+.navbar-inverse .navbar-social-twitter:focus {
+  color: #00aced;
+  background-color: transparent;
+}
