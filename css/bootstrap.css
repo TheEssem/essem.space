@@ -6790,3 +6790,9 @@ body {
   color: #00aced !important;
   background-color: transparent;
 }
+
+.navbar-inverse .navbar-social-youtube:hover,
+.navbar-inverse .navbar-social-youtube:focus {
+  color: #cd201f !important;
+  background-color: transparent;
+}
