@@ -6787,6 +6787,6 @@ body {
 
 .navbar-inverse .navbar-social-twitter:hover,
 .navbar-inverse .navbar-social-twitter:focus {
-  color: #00aced;
+  color: #00aced !important;
   background-color: transparent;
 }
