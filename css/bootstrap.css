@@ -6785,6 +6785,10 @@ body {
   padding-left: 15px;
 }
 
+.navbar-icons {
+  padding: 10px;
+}
+
 .navbar-inverse .navbar-social-twitter:hover,
 .navbar-inverse .navbar-social-twitter:focus {
   color: #00aced !important;
