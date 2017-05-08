@@ -6796,3 +6796,7 @@ body {
   color: #cd201f !important;
   background-color: transparent;
 }
+
+.nav > li > a > i {
+  padding: 10px;
+}
