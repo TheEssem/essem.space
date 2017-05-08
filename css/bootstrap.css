@@ -6800,3 +6800,9 @@ body {
   color: #cd201f !important;
   background-color: transparent;
 }
+
+.navbar-inverse .navbar-social-reddit:hover,
+.navbar-inverse .navbar-social-reddit:focus {
+  color: #ff4500 !important;
+  background-color: transparent;
+}
