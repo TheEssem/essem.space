@@ -6786,7 +6786,7 @@ body {
 }
 
 .navbar-icons {
-  padding: 10px;
+  padding: 10px !important;
 }
 
 .navbar-inverse .navbar-social-twitter:hover,
