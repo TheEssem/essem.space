@@ -6787,6 +6787,9 @@ body {
 
 .navbar-icons {
   padding: 15px 10px !important;
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
 }
 
 .navbar-inverse .navbar-social-twitter:hover,
