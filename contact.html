@@ -13,7 +13,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet">
     
     <style>
-      textarea {min-height:50px; resize:vertical;}
+       textarea {min-height:50px; resize:vertical;}
+       input:focus ~ .form-control-feedback {
+            z-index: 3;
+       }
     </style>
 
     <!-- Bootstrap -->
