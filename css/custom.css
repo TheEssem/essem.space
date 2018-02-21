@@ -1,0 +1,24 @@
+.navbar-icons {
+  padding: 15px 10px !important;
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+.navbar-social-twitter:hover,
+.navbar-social-twitter:focus {
+  color: #00aced !important;
+  background-color: transparent;
+}
+
+.navbar-social-youtube:hover,
+.navbar-social-youtube:focus {
+  color: #ff0000 !important;
+  background-color: transparent;
+}
+
+.navbar-social-reddit:hover,
+.navbar-social-reddit:focus {
+  color: #ff4500 !important;
+  background-color: transparent;
+}
