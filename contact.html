@@ -1,162 +1,159 @@
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Contact - Essem</title>
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=eE5oPqk4Qk">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=eE5oPqk4Qk">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=eE5oPqk4Qk">
-    <link rel="manifest" href="/manifest.json?v=eE5oPqk4Qk">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=eE5oPqk4Qk" color="#486fd4">
-    <link rel="shortcut icon" href="/favicon.ico?v=eE5oPqk4Qk">
-    <meta name="theme-color" content="#ffffff">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head
+        content must come *after* these tags -->
+        <title>Contact - Essem</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=eE5oPqk4Qk">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=eE5oPqk4Qk">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=eE5oPqk4Qk">
+        <link rel="manifest" href="/manifest.json?v=eE5oPqk4Qk">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=eE5oPqk4Qk" color="#486fd4">
+        <link rel="shortcut icon" href="/favicon.ico?v=eE5oPqk4Qk">
+        <meta name="theme-color" content="#ffffff">
+        <link href="/FocialMix/css/focialmix.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"
+        rel="stylesheet">
+        <!--script src="https://widget.battleforthenet.com/widget.js" async></script-->
+        <style>
+            textarea {
+                min-height:50px;
+                resize:vertical;
+            }
+            input:focus ~ .form-control-feedback, textarea:focus ~ .form-control-feedback {
+                z-index: 3;
+            }
+        </style>
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.css" rel="stylesheet">
+    </head>
     
-    <link href="/FocialMix/css/focialmix.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet">
-    <!--script src="https://widget.battleforthenet.com/widget.js" async></script-->
-    
-    <style>
-       textarea {min-height:50px; resize:vertical;}
-       input:focus ~ .form-control-feedback, textarea:focus ~ .form-control-feedback {
-            z-index: 3;
-       }
-    </style>
-
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+&#x2630;</button> <a class="navbar-brand"
+                href="/index.html">Essem</a>
+                <!-- Collect the nav links, forms, and other
+                content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item"><a href="/blog/index.html" class="nav-link">Blog</a>
+                        </li>
+                        <li class="active nav-item"><a href="/contact.html" class="nav-link">Contact <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item"><a class="navbar-icons navbar-social-twitter nav-link" href="https://twitter.com/TheEssem"><i class="icon-lg icon-twitter-square"></i></a>
+                        </li>
+                        <li class="nav-item"><a class="navbar-icons navbar-social-youtube nav-link" href="https://www.youtube.com/channel/UCxchjCDwqKs1b6UcuieiOQA"><i class="icon-lg icon-youtube-square"></i></a>
+                        </li>
+                        <li class="nav-item"><a class="navbar-icons navbar-social-reddit nav-link" href="https://reddit.com/u/TheEssemCraft"><i class="icon-lg icon-reddit-square"></i></a>
+                        </li>
+                        <li class="nav-item"><a class="navbar-icons nav-link" href="https://github.com/TheEssemCraft"><i class="icon-lg icon-github-square"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/index.html">Essem</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/blog/index.html">Blog</a></li>
-                    <li class="active"><a href="/contact.html">Contact <span class="sr-only">(current)</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="navbar-icons navbar-social-twitter" href="https://twitter.com/TheEssem"><i class="icon-lg icon-twitter-square"></i></a></li>
-                    <li><a class="navbar-icons navbar-social-youtube" href="https://www.youtube.com/channel/UCxchjCDwqKs1b6UcuieiOQA"><i class="icon-lg icon-youtube-square"></i></a></li>
-                    <li><a class="navbar-icons navbar-social-reddit" href="https://reddit.com/u/TheEssemCraft"><i class="icon-lg icon-reddit-square"></i></a></li>
-                    <li><a class="navbar-icons" href="https://github.com/TheEssemCraft"><i class="icon-lg icon-github-square"></i></a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  <strong>ATTENTION:</strong> This
+                site is still under construction, so expect this page to change at any
+                time.</div>
+            <form class="card bg-light card-body mb-3 " action="https://formspree.io/smswessem@gmail.com"
+            method="post" id="contact_form">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Contact Me</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label">Name
+                            <label class="text-danger">*</label>
+                        </label>
+                        <div class="col-lg-4 inputGroupContainer">
+                            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input
+                                name="name" placeholder="Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label">Email
+                            <label class="text-danger">*</label>
+                        </label>
+                        <div class="col-lg-4 inputGroupContainer">
+                            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input
+                                name="email" placeholder="Email Address" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label">Subject</label>
+                        <div class="col-lg-4 inputGroupContainer">
+                            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-comment"></i></span>
+                                <input
+                                name="_subject" placeholder="Subject" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text area -->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label">Message
+                            <label class="text-danger">*</label>
+                        </label>
+                        <div class="col-lg-4 inputGroupContainer">
+                            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                <textarea
+                                class="form-control" name="input" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Config -->
+                    <input type="hidden" name="_next" value="/contactthanks.html">
+                    <!-- Required fields text -->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label"></label>
+                        <div class="col-lg-4">
+                            <div class="text-danger">* Required field</div>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-lg-4 form-control-label"></label>
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-primary"><span class="fa fa-send"></span> Send</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <hr>
+            <footer>
+                <p>&#xA9; 2017 Essem</p>
+            </footer>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <div class="container">
-        <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>ATTENTION:</strong> This site is still under construction, so expect this page to change at any time.</div>
-          <form class="well form-horizontal" action="https://formspree.io/smswessem@gmail.com" method="post" id="contact_form">
-    <fieldset>
-
-      <!-- Form Name -->
-      <legend>Contact Me</legend>
-
-      <!-- Text input-->
-
-      <div class="form-group">
-        <label class="col-md-4 control-label">Name <label class="text-danger">*</label></label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input name="name" placeholder="Name" class="form-control" type="text">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">Email <label class="text-danger">*</label></label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input name="email" placeholder="Email Address" class="form-control" type="text">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">Subject</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-comment"></i></span>
-            <input name="_subject" placeholder="Subject" class="form-control" type="text">
-          </div>
-        </div>
-      </div>
-
-      <!-- Text area -->
-
-      <div class="form-group">
-        <label class="col-md-4 control-label">Message <label class="text-danger">*</label></label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <textarea class="form-control" name="input" placeholder="Message"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <!-- Config -->
-      <input type="hidden" name="_next" value="/contactthanks.html" />
-
-      <!-- Required fields text -->
-      <div class="form-group">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-4">
-          <div class="text-danger">* Required field</div>
-        </div>
-      </div>
-
-      <!-- Button -->
-      <div class="form-group">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-4">
-          <button type="submit" class="btn btn-primary"><span class="fa fa-send"></span> Send</button>
-        </div>
-      </div>
-
-    </fieldset>
-  </form>
-        <hr>
-        <footer>
-            <p>© 2017 Essem</p>
-        </footer>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
-    <script>
+        <!-- jQuery/Popper.js (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files
+        as needed -->
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+		<script>
       $(document).ready(function() {
     $('#contact_form').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
@@ -207,12 +204,12 @@
         });
 });
     </script>
-    <style>
-        body {
-            padding-top: 70px;
-            margin-bottom: 80px
-        }
-    </style>
-</body>
+        <style>
+            body {
+                padding-top: 70px;
+                margin-bottom: 80px
+            }
+        </style>
+    </body>
 
 </html>
