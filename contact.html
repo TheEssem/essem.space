@@ -17,8 +17,6 @@
         <link href="/FocialMix/css/focialmix.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"
-        rel="stylesheet">
         <!--script src="https://widget.battleforthenet.com/widget.js" async></script-->
         <style>
             textarea {
@@ -73,8 +71,8 @@
             <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  <strong>ATTENTION:</strong> This
                 site is still under construction, so expect this page to change at any
                 time.</div>
-            <form class="card bg-light card-body mb-3 " action="https://formspree.io/smswessem@gmail.com"
-            method="post" id="contact_form">
+            <form class="card bg-light card-body mb-3 needs-validation" action="https://formspree.io/smswessem@gmail.com"
+            method="post" id="contact_form" novalidate>
                 <fieldset>
                     <!-- Form Name -->
                     <legend>Contact Me</legend>
@@ -87,8 +85,11 @@
                         <div class="col-lg-4 inputGroupContainer">
                             <div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i></span></div>
                                 <input
-                                name="name" id="name" placeholder="Name" class="form-control" type="text">
+                                name="name" id="name" placeholder="Name" class="form-control" type="text" required>
                             </div>
+			<div class="invalid-feedback">
+          		  Please input your name
+        		</div>
                         </div>
 			</div>
                     </div>
@@ -101,8 +102,11 @@
                         <div class="col-lg-4 inputGroupContainer">
                             <div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope"></i></span></div>
                                 <input
-                                name="email" id="email" placeholder="Email Address" class="form-control" type="text">
+                                name="email" id="email" placeholder="Email Address" class="form-control" type="text" required>
                             </div>
+				<div class="invalid-feedback">
+          			  Please input your email address
+        			</div>
                         </div>
 			    </div>
                     </div>
@@ -127,8 +131,11 @@
                         <div class="col-lg-4 inputGroupContainer">
                             <div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-pencil"></i></span></div>
                                 <textarea
-                                class="form-control" id="input" name="input" placeholder="Message"></textarea>
+                                class="form-control" id="input" name="input" placeholder="Message" required></textarea>
                             </div>
+			<div class="invalid-feedback">
+          		  Please write a message
+        		</div>
                         </div>
 			    </div>
                     </div>
@@ -165,58 +172,26 @@
         <!-- Include all compiled plugins (below), or include individual files
         as needed -->
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
-		<script>
-      $(document).ready(function() {
-    $('#contact_form').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            name: {
-                validators: {
-                        stringLength: {
-                        min: 2,
-                    },
-                        notEmpty: {
-                        message: 'Please input your name'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please input your email address'
-                    },
-                    emailAddress: {
-                        message: 'Please input a valid email address'
-                    }
-                }
-            },
-            input: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please write a message'
-                    }
-                    }
-                }
-            }
-        })
-        .on('success.form.bv', function(e) {
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-        });
-});
-    </script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
         <style>
             body {
                 padding-top: 70px;
