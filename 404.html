@@ -22,8 +22,16 @@
 	<script>
 		window.onload = function() {
   		  twemoji.parse(document.body, {
-		    folder: '2/svg',
-		    ext: '.svg'
+		    folder: 'svg',
+		    ext: '.svg',
+		    callback: function(iconId, options) {
+        		switch (iconId) {
+            		case 'a9':      // © copyright
+            		case 'ae':      // ® registered trademark
+            		case '2122':    // ™ trademark
+                	    return false;
+        	    }
+        	    return ''.concat(options.base, options.size, '/', iconId, options.ext);
 		  });
 		}
 	</script>
