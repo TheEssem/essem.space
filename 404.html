@@ -36,9 +36,9 @@
 	</script>
         <!--script src="https://widget.battleforthenet.com/widget.js" async></script-->
         <style>
-            .red {
+            /*.red {
                 color: #d9534f !important;
-            }
+            }*/
             .fa-frown-o {
                 color: #1c9118;
             }
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="jumbotron">
-                <div class="text-center face"><i id="face" class="far fa-5x fa-frown red"></i>
+                <div class="text-center"><div id="face"><i class="far fa-5x fa-frown text-danger"></i></div>
                 </div>
                  <h1 class="text-center">404 Not Found<p><small class="text-center"> Oh noes everything broke</small></p></h1>
                 <p class="text-center">Try pressing the back button or clicking on this button.</p>
@@ -129,10 +129,10 @@
 		<script>
 			(function() {
 				var count = 0;
-				$('.face').on('click', function() {
+				$('#face').on('click', function() {
 					count += 1;
 					if (count == 1) {
-						$(this).find('[data-fa-i2svg]').removeClass("red");
+						$(this).find('[data-fa-i2svg]').removeClass("text-danger").addClass("text-success");
 					};
 					if (count == 2) {
 						$(this).find('[data-fa-i2svg]').removeClass("fa-frown").addClass("fa-smile");
