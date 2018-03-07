@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="jumbotron">
-                <div class="text-center"><i id="face" class="far fa-5x fa-frown fa-smile red"></i>
+                <div class="text-center face"><i id="face" class="far fa-5x fa-frown red"></i>
                 </div>
                  <h1 class="text-center">404 Not Found<p><small class="text-center"> Oh noes everything broke</small></p></h1>
                 <p class="text-center">Try pressing the back button or clicking on this button.</p>
@@ -129,17 +129,16 @@
 		<script>
 			(function() {
 				var count = 0;
-				$('#face').click(function() {
+				$('.face').on('click', function() {
 					count += 1;
 					if (count == 1) {
-						$('#face').removeClass("red")
-					}
+						$(this).find('[data-fa-i2svg]').removeClass("red");
+					};
 					if (count == 2) {
-						$('#face').removeClass("fa-frown")
-						$('#face').addClass("fa-smile")
-					}
+						$(this).find('[data-fa-i2svg]').removeClass("fa-frown").addClass("fa-smile");
+					};
 					if (count >= 3) {
-						$('#secret').modal('show')
+						$('#secret').modal('show');
 					}
 				});
 			})();
