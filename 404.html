@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="jumbotron">
-                <div class="text-center"><i id="face" class="fa fa-5x fa-frown fa-smile red"></i>
+                <div class="text-center"><i id="face" class="far fa-5x fa-frown fa-smile red"></i>
                 </div>
                  <h1 class="text-center">404 Not Found<p><small class="text-center"> Oh noes everything broke</small></p></h1>
                 <p class="text-center">Try pressing the back button or clicking on this button.</p>
@@ -135,7 +135,8 @@
 						$('#face').removeClass("red")
 					}
 					if (count == 2) {
-						$('#face').removeClass("fa-frown-o")
+						$('#face').removeClass("fa-frown")
+						$('#face').addClass("fa-smile")
 					}
 					if (count >= 3) {
 						$('#secret').modal('show')
