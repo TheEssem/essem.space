@@ -4,6 +4,10 @@
   vertical-align: -15%;
 }
 
+.icons-text {
+  font-size: 1em;
+}
+
 .navbar-social-twitter:hover,
 .navbar-social-twitter:focus {
   color: #00aced !important;
