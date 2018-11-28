@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>esmBot Command List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
     <style>
@@ -29,7 +30,9 @@
 	  var converter = new showdown.Converter();
 	  converter.setFlavor("github");
           var html = converter.makeHtml(text);
-          return document.getElementById("markdown").innerHTML = html;
+          var markdownContainer = document.getElementById("markdown");
+	  markdownContainer.removeChild(document.getElementById("loading"));
+          markdownContainer.innerHTML = html;
 	});
       }).catch(function(err) {
         console.error(err);
@@ -38,6 +41,7 @@
   </head>
   <body>
   <article class="markdown-body" id="markdown">
+    <h1 id="loading">Loading...</h1>
   </article>
   </body>
 </html>
