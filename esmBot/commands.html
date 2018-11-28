@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
     <style>
 	    .markdown-body {
 		    box-sizing: border-box;
@@ -30,7 +30,7 @@
         var html = converter.makeHtml(text);
         return document.getElementById("markdown").innerHTML = html;
       }).catch(function(err) {
-        console.log('Fetch Error :-S', err);
+        console.error(err);
       });
     </script>
   </head>
