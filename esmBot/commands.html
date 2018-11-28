@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+	    .markdown-body {
+		    box-sizing: border-box;
+		    min-width: 200px;
+		    max-width: 980px;
+		    margin: 0 auto;
+		    padding: 45px;
+	    }
+
+	    @media (max-width: 767px) {
+		    .markdown-body {
+			    padding: 15px;
+		    }
+	    }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script>
+      fetch("https://gist.githubusercontent.com/TheEssemCraft/a0597f9603177a2df1d8398aa8b78729/raw/esmBotCommands.md").then(function(response) {
+        if (response.status !== 200) {
+          console.log("Looks like there was a problem. Status Code: " + response.status);
+          return;
+        }
+        var text = response.text();
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(text);
+        return document.getElementById("markdown").innerHTML = html;
+      }).catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
+    </script>
+  </head>
+  <body>
+  <article class="markdown-body" id="markdown">
+  </article>
+  </body>
+</html>
