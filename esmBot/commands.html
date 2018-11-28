@@ -25,10 +25,12 @@
           console.log("Looks like there was a problem. Status Code: " + response.status);
           return;
         }
-        var text = response.text();
-        var converter = new showdown.Converter();
-        var html = converter.makeHtml(text);
-        return document.getElementById("markdown").innerHTML = html;
+        response.text().then(function(text) {
+	  var converter = new showdown.Converter();
+	  converter.setFlavor("github");
+          var html = converter.makeHtml(text);
+          return document.getElementById("markdown").innerHTML = html;
+	});
       }).catch(function(err) {
         console.error(err);
       });
