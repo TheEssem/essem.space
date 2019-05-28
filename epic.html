@@ -231,7 +231,6 @@
         libopenmpt.onRuntimeInitialized = function() {
             var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
             player.load("images/tuber_theme_14.xm", function(buffer) {
-                console.log("test" + buffer);
                 player.play(buffer);
             });
         };
