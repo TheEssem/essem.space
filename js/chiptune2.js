@@ -1,16 +1,12 @@
-// constants
-const OPENMPT_MODULE_RENDER_STEREOSEPARATION_PERCENT = 2
-const OPENMPT_MODULE_RENDER_INTERPOLATIONFILTER_LENGTH = 3
+// based on https://deskjet.github.io/chiptune2.js/
 
 // audio context
 var ChiptuneAudioContext = window['AudioContext'] || window['webkitAudioContext'];
 
 // config
-var ChiptuneJsConfig = function (repeatCount, stereoSeparation, interpolationFilter, context)
+var ChiptuneJsConfig = function (repeatCount, context)
 {
   this.repeatCount = repeatCount;
-  this.stereoSeparation = stereoSeparation;
-  this.interpolationFilter = interpolationFilter;
   this.context = context;
 }
 
@@ -56,18 +52,6 @@ ChiptuneJsPlayer.prototype.duration = function() {
   return libopenmpt._openmpt_module_get_duration_seconds(this.currentPlayingNode.modulePtr);
 }
 
-ChiptuneJsPlayer.prototype.getCurrentRow = function() {
-  return libopenmpt._openmpt_module_get_current_row(this.currentPlayingNode.modulePtr);  
-}
-
-ChiptuneJsPlayer.prototype.getCurrentPattern = function() {
-  return libopenmpt._openmpt_module_get_current_pattern(this.currentPlayingNode.modulePtr);  
-}
-
-ChiptuneJsPlayer.prototype.getCurrentOrder = function() {
-  return libopenmpt._openmpt_module_get_current_order(this.currentPlayingNode.modulePtr);  
-}
-
 ChiptuneJsPlayer.prototype.metadata = function() {
   var data = {};
   var keys = Pointer_stringify(libopenmpt._openmpt_module_get_metadata_keys(this.currentPlayingNode.modulePtr)).split(';');
@@ -79,10 +63,6 @@ ChiptuneJsPlayer.prototype.metadata = function() {
     libopenmpt._free(keyNameBuffer);
   }
   return data;
-}
-
-ChiptuneJsPlayer.prototype.module_ctl_set = function(ctl, value) {
-  return libopenmpt.ccall('openmpt_module_ctl_set', 'number', ['number', 'string', 'string'], [this.currentPlayingNode.modulePtr, ctl, value]) === 1;
 }
 
 // playing, etc
@@ -101,7 +81,8 @@ ChiptuneJsPlayer.prototype.unlock = function() {
 
 ChiptuneJsPlayer.prototype.load = function(input, callback) {
 
-  if (this.touchLocked) {
+  if (this.touchLocked)
+  {
     this.unlock();
   }
 
@@ -117,14 +98,20 @@ ChiptuneJsPlayer.prototype.load = function(input, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', input, true);
     xhr.responseType = 'arraybuffer';
+    xhr.onprogress = function(e) {
+      if (e.lengthComputable) {
+        document.getElementById("player").innerHTML = "Loading... " + Math.floor((e.loaded / e.total) * 100) + "%";
+      }
+    };
     xhr.onload = function(e) {
-      if (xhr.status === 200) {
+      if (xhr.status === 200 /*&& e.total*/) {
         return callback(xhr.response); // no error
       } else {
         player.fireEvent('onError', {type: 'onxhr'});
       }
     }.bind(this);
     xhr.onerror = function() {
+      document.getElementById("play").innerHTML = "Error while downloading file for playback :-(";
       player.fireEvent('onError', {type: 'onxhr'});
     };
     xhr.onabort = function() {
@@ -143,8 +130,6 @@ ChiptuneJsPlayer.prototype.play = function(buffer) {
 
   // set config options on module
   libopenmpt._openmpt_module_set_repeat_count(processNode.modulePtr, this.config.repeatCount);
-  libopenmpt._openmpt_module_set_render_param(processNode.modulePtr, OPENMPT_MODULE_RENDER_STEREOSEPARATION_PERCENT, this.config.stereoSeparation);
-  libopenmpt._openmpt_module_set_render_param(processNode.modulePtr, OPENMPT_MODULE_RENDER_INTERPOLATIONFILTER_LENGTH, this.config.interpolationFilter);
 
   this.currentPlayingNode = processNode;
   processNode.connect(this.context.destination);
@@ -256,4 +241,102 @@ ChiptuneJsPlayer.prototype.createLibopenmptNode = function(buffer, config) {
     }
   }
   return processNode;
+}
+
+
+
+var player;
+var libopenmpt = { memoryInitializerPrefixURL : basepath + "js/" };
+
+function pauseButton() {
+    player.togglePause();
+
+    var current = document.getElementById('currently-playing');
+    if(current.title == 'Pause')
+    {
+        current.title = 'Play';
+        current.src = basepath + 'img/play.png';
+    } else
+    {
+        current.title = 'Pause';
+        current.src = basepath + 'img/pause.png';
+    }
+}
+
+function libopenmpt_play(elem)
+{
+    var path = elem.nextSibling.nextSibling.href;
+
+    if (player == undefined)
+    {
+        player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
+    }
+    
+    player.load(path, function(buffer)
+    {
+        var current = document.getElementById('currently-playing');
+        if(current != null)
+        {
+            current.src = basepath + 'img/pause.png';
+            current.title = 'Pause';
+            current.parentNode.onclick = pauseButton;
+        }
+        player.play(buffer);
+
+        var metadata = player.metadata();
+        var title = metadata['title'];
+        if (title == '' && current != null)
+        {
+            title = current.parentNode.nextSibling.nextSibling.textContent;
+        }
+
+        var sec_num = player.duration();
+        var minutes = Math.floor(sec_num / 60);
+        var seconds = Math.floor(sec_num % 60);
+        if (seconds < 10) {seconds = "0" + seconds; }
+        document.getElementById('player').innerHTML = 'Now playing: ' + title + ' (' + minutes + ':' + seconds + ')';
+    });
+}
+
+function play(elem)
+{
+    if(typeof ChiptuneAudioContext == 'undefined')
+    {
+        alert('Your browser does not support the HTML5 Web Audio API :-(');
+        return;
+    }
+    
+    var current = document.getElementById('currently-playing');
+    if(current != null)
+    {
+        current.src = basepath + 'img/play.png';
+        current.title = 'Play';
+        current.parentNode.onclick = function() { play(this); }
+        current.id = '';
+        player.stop();
+    }
+    elem.firstChild.id = 'currently-playing';
+
+    if(document.getElementById('libopenmpt') == null)
+    {
+        var playerDiv = document.createElement('div');
+        playerDiv.id = 'player';
+        playerDiv.innerHTML = 'Loading...';
+        document.body.appendChild(playerDiv);
+  
+        var js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.id = 'libopenmpt';
+        js.src = basepath + 'js/libopenmpt.js';
+        js.onload = handler = function(event)
+        {
+            libopenmpt.onRuntimeInitialized = _ => {
+                libopenmpt_play(elem);
+            };
+        };
+        document.body.appendChild(js); 
+    } else
+    {
+        libopenmpt_play(elem);
+    }
 }
