@@ -227,6 +227,11 @@
         }
     </style>
     <script>
+	var script = document.createElement('script');
+	var scripts = document.getElementsByTagName('script')[0];
+	script.src = "js/libopenmpt.js";
+	scripts.parentNode.insertBefore(script, scripts);
+	    
         var libopenmpt = {};
         libopenmpt.onRuntimeInitialized = function() {
             var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
@@ -235,7 +240,7 @@
             });
         };
     </script>
-    <script src="js/libopenmpt.js"></script>
+    <!--script src="js/libopenmpt.js"></script-->
     <script src="js/chiptune2.js"></script>
 </head>
 
