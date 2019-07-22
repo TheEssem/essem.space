@@ -238,20 +238,6 @@
       }
     }
   </style>
-  <script>
-    var script = document.createElement('script');
-    var scripts = document.getElementsByTagName('script')[0];
-    script.src = "js/libopenmpt.js";
-    scripts.parentNode.insertBefore(script, scripts);
-
-    var libopenmpt = {};
-    libopenmpt.onRuntimeInitialized = function() {
-      var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
-      player.load("images/tuber_theme_14.xm", function(buffer) {
-        player.play(buffer);
-      });
-    };
-  </script>
   <script src="js/chiptune2.js"></script>
 </head>
 
@@ -295,47 +281,7 @@
     </h1>
   </div>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 160
-        },
-        color: {
-          value: "#ffffff"
-        },
-        shape: {
-          type: "edge"
-        },
-        opacity: {
-          value: 1,
-          random: false
-        },
-        size: {
-          value: 3
-        },
-        line_linked: {
-          enable: false
-        },
-        move: {
-          enable: true,
-          speed: 50,
-          direction: "bottom",
-          straight: true
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: false
-          },
-          onclick: {
-            enable: false
-          }
-        },
-      }
-    });
-  </script>
+  <script src="js/epic2.js"></script>
 </body>
 
 </html>
