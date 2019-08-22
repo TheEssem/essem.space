@@ -6,7 +6,7 @@
       
       const redirectElement = document.createElement("meta");
       const redirect = urlParams.get("redirect");
-      redirectElement.http-equiv = "refresh";
+      redirectElement.setAttribute("http-equiv", "refresh");
       redirectElement.content = `0; URL='${redirect}'`;
       const urlElement = document.createElement("meta");
       urlElement.property = "og:url";
