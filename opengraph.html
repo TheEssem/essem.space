@@ -24,7 +24,7 @@
       descriptionElement.property = "og:description";
       descriptionElement.content = urlParams.get("desc");
       
-      const head = document.getElementsByTagName("head");
+      const head = document.getElementsByTagName("head")[0];
       head.appendChild(urlElement);
       head.appendChild(imageElement);
       head.appendChild(titleElement);
