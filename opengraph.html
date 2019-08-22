@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta property="og:type" content="article">
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      const redirectElement = document.createElement("meta");
+      const redirect = urlParams.get("redirect");
+      redirectElement.http-equiv = "refresh";
+      redirectElement.content = `0; URL='${redirect}'`;
+      const urlElement = document.createElement("meta");
+      urlElement.property = "og:url";
+      urlElement.content = redirect;
+      
+      const imageElement = document.createElement("meta");
+      imageElement.property = "og:image";
+      imageElement.content = urlParams.get("image");
+      
+      const titleElement = document.createElement("meta");
+      titleElement.property = "og:title";
+      titleElement.content = urlParams.get("title");
+      
+      const descriptionElement = document.createElement("meta");
+      descriptionElement.property = "og:description";
+      descriptionElement.content = urlParams.get("desc");
+      
+      const head = document.getElementsByTagName("head");
+      head.appendChild(urlElement);
+      head.appendChild(imageElement);
+      head.appendChild(titleElement);
+      head.appendChild(descriptionElement);
+      head.appendChild(redirectElement);
+    </script>
+  </head>
+  <body></body>
+</html>
