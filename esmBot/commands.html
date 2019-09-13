@@ -30,7 +30,9 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
     <script>
-        fetch("https://gist.githubusercontent.com/TheEssem/a0597f9603177a2df1d8398aa8b78729/raw").then(function(response) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const dev = urlParams.get("dev") || false;
+        fetch(dev ? "https://gist.githubusercontent.com/TheEssem/2c6836049787ed85a5db2647e9f70c77/raw" : "https://gist.githubusercontent.com/TheEssem/a0597f9603177a2df1d8398aa8b78729/raw").then(function(response) {
             var markdownContainer = document.getElementById("markdown");
             var loading = document.getElementById("loading");
             if (response.status !== 200) {
