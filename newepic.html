@@ -159,6 +159,20 @@
         transform: translate(-100%, 0);
       }
     }
+	
+	.rainbow-text {
+		background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: rainbow 8s ease infinite;
+		background-size: 800% 800%;
+	}
+	
+	@keyframes rainbow { 
+		0%{background-position:0% 50%}
+		50%{background-position:100% 25%}
+		100%{background-position:0% 50%}
+	}
   </style>
   <style>
     canvas {
@@ -279,6 +293,7 @@
 		</div>
 	</div>
     <h1 class="marquee">
+	<div class="rainbow-text">
       <span>W</span>
       <span>E</span>
       <span>L</span>
@@ -303,6 +318,7 @@
       <span>O</span>
       <span>N</span>
       <span>E</span>
+	  </div>
     </h1>
   </div>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
