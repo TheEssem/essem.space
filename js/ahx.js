@@ -83,7 +83,6 @@ function AHXSong() {
 
 		loadFile(url, function(xhr) {
 			var t = xhr.responseText || "" ;
-			console.log(typeof t)
 			var ff = [];
 			var mx = t.length;
 			var scc= String.fromCharCode;
@@ -1333,7 +1332,6 @@ function AHXMasterWebKit(output) {
 		var buffer = e.outputBuffer;
 		var left = buffer.getChannelData(0);
 		var right = buffer.getChannelData(1);
-		console.log(left);
 		var out = 0;
 
 		while(want > 0) {
