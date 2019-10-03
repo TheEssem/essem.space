@@ -1,13 +1,13 @@
 var text = document.getElementById("introText");
 var style = document.createElement("style");
-var body = document.getElementsByTagName("body")[0];
+var head = document.getElementsByTagName("head")[0];
 var seconds = 0;
 text.childNodes.forEach(function(value, index) {
-  seconds = parseFloat(seconds + 0.1).toFixed(1);
+  seconds = parseFloat(parseFloat(seconds) + 0.1).toFixed(1);
   style.innerHTML = style.innerHTML + "h1 span:nth-child(" + index + ") { animation-delay: " + seconds + "s; }";
 });
 
-body.appendChild(style);
+head.appendChild(style);
 
 particlesJS("particles-js", {
   particles: {
