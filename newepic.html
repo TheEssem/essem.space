@@ -4,11 +4,11 @@
   <title>WELCOME TO THE EPIC ZONE</title>
   <!--link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet"-->
   <style>
-  
-	@font-face {
-		font-family: 'Topaz';
-		src: url('fonts/Topaz.ttf');
-	}
+    @font-face {
+      font-family: 'Topaz';
+      src: url('fonts/Topaz.ttf');
+    }
+
     body {
       margin: 0;
       position: absolute;
@@ -20,8 +20,8 @@
       height: 100%;
       background-attachment: fixed;
       background-size: 100% 100%;
-	  background-color: #000;
-	  overflow: hidden;
+      background-color: #000;
+      overflow: hidden;
       font-family: 'Topaz', monospace;
       -webkit-font-smoothing: antialiased;
     }
@@ -34,11 +34,11 @@
       width: 100%;
       height: 100%;
     }
-	
-	#intro {
-	  opacity: 0;
-	  animation: fade 3s forwards;
-	}
+
+    #intro {
+      opacity: 0;
+      animation: fade 3s forwards;
+    }
 
     h1 {
       cursor: default;
@@ -47,7 +47,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      width: 100%;
+      width: 200%;
       height: 100px;
       margin: auto;
       display: block;
@@ -59,21 +59,21 @@
       position: relative;
       top: 25px;
       display: inline-block;
-      -webkit-animation: bounce 0.3s ease infinite alternate;
+      animation: bounce 0.3s ease infinite alternate;
       font-size: 80px;
     }
 
-    @-webkit-keyframes bounce {
+    @keyframes bounce {
       100% {
         top: -10px;
       }
     }
-	
-	@keyframes fade {
-	  100% {
-	    opacity: 1;
-	  }
-	}
+
+    @keyframes fade {
+      100% {
+        opacity: 1;
+      }
+    }
   </style>
   <style>
     .marquee {
@@ -100,25 +100,32 @@
         transform: translate(-100%, 0);
       }
     }
-	
-	.rainbow-text {
-		background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation: rainbow 8s ease infinite;
-		background-size: 800% 800%;
-	}
-	
-	@keyframes rainbow { 
-		0%{background-position:0% 50%}
-		50%{background-position:100% 25%}
-		100%{background-position:0% 50%}
-	}
+
+    .rainbow-text {
+      background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 8s ease infinite;
+      background-size: 800% 800%;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 25%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
   </style>
   <style>
     canvas {
       display: block;
-      vertical-align: bottom;
     }
 
     #particles-js {
@@ -132,10 +139,10 @@
     }
   </style>
   <style>
-	.zoom {
-	  animation: zoominoutsinglefeatured 5s infinite linear;
-	}
-	
+    .zoom {
+      animation: zoominoutsinglefeatured 5s infinite linear;
+    }
+
     .cube {
       transform-style: preserve-3d;
       animation: spin 3s infinite linear;
@@ -196,26 +203,28 @@
         transform: rotateX(360deg) rotateY(740deg);
       }
     }
-	
-	@keyframes zoominoutsinglefeatured {
-		0% {
-			transform: scale(1,1);
-		}
-		50% {
-			transform: scale(2,2);
-		}
-		100% {
-			transform: scale(1,1);
-		}
-	}
+
+    @keyframes zoominoutsinglefeatured {
+      0% {
+        transform: scale(1, 1);
+      }
+
+      50% {
+        transform: scale(2, 2);
+      }
+
+      100% {
+        transform: scale(1, 1);
+      }
+    }
   </style>
   <script src="js/ahx.js"></script>
   <script>
     var ahxMaster = AHXMaster();
-	var ahxSong = new AHXSong();
-	ahxSong.LoadSong("images/song.ahx", function() {
-		ahxMaster.Play(ahxSong);
-	});
+    var ahxSong = new AHXSong();
+    ahxSong.LoadSong("images/song.ahx", function () {
+      ahxMaster.Play(ahxSong);
+    });
   </script>
 </head>
 
@@ -223,64 +232,64 @@
   <iframe src="images/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
   <div id="intro">
     <div id="particles-js"></div>
-	<div class="zoom">
-		<div class="cube">
-			<div class="top"></div>
-			<div class="right"></div>
-			<div class="bottom"></div>
-			<div class="left"></div>
-			<div class="front"></div>
-			<div class="back"></div>
-		</div>
-	</div>
+    <div class="zoom">
+      <div class="cube">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="front"></div>
+        <div class="back"></div>
+      </div>
+    </div>
     <h1 class="marquee">
-	<div class="rainbow-text" id="introText">
-      <span>W</span>
-      <span>E</span>
-      <span>L</span>
-      <span>C</span>
-      <span>O</span>
-      <span>M</span>
-      <span>E</span>
-      <span>&nbsp;</span>
-      <span>T</span>
-      <span>O</span>
-      <span>&nbsp;</span>
-      <span>T</span>
-      <span>H</span>
-      <span>E</span>
-      <span>&nbsp;</span>
-      <span>S</span>
-      <span>E</span>
-      <span>C</span>
-      <span>O</span>
-      <span>N</span>
-      <span>D</span>
-      <span>&nbsp;</span>
-      <span>E</span>
-      <span>P</span>
-	  <span>I</span>
-	  <span>C</span>
-	  <span>&nbsp;</span>
-	  <span>Z</span>
-	  <span>O</span>
-	  <span>N</span>
-	  <span>E</span>
-	  <span>.</span>
-	  <span>&nbsp;</span>
-	  <span>G</span>
-	  <span>E</span>
-	  <span>T</span>
-	  <span>&nbsp;</span>
-	  <span>R</span>
-	  <span>E</span>
-	  <span>A</span>
-	  <span>D</span>
-	  <span>Y</span>
-	  <span>.</span>
-	  <span>.</span>
-	  <span>.</span>
-	  </div>
+      <div class="rainbow-text" id="introText">
+        <span>W</span>
+        <span>E</span>
+        <span>L</span>
+        <span>C</span>
+        <span>O</span>
+        <span>M</span>
+        <span>E</span>
+        <span>&nbsp;</span>
+        <span>T</span>
+        <span>O</span>
+        <span>&nbsp;</span>
+        <span>T</span>
+        <span>H</span>
+        <span>E</span>
+        <span>&nbsp;</span>
+        <span>S</span>
+        <span>E</span>
+        <span>C</span>
+        <span>O</span>
+        <span>N</span>
+        <span>D</span>
+        <span>&nbsp;</span>
+        <span>E</span>
+        <span>P</span>
+        <span>I</span>
+        <span>C</span>
+        <span>&nbsp;</span>
+        <span>Z</span>
+        <span>O</span>
+        <span>N</span>
+        <span>E</span>
+        <span>.</span>
+        <span>&nbsp;</span>
+        <span>G</span>
+        <span>E</span>
+        <span>T</span>
+        <span>&nbsp;</span>
+        <span>R</span>
+        <span>E</span>
+        <span>A</span>
+        <span>D</span>
+        <span>Y</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
     </h1>
   </div>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
