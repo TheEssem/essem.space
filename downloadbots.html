@@ -2,15 +2,12 @@
 <html>
 
 <head>
-    <title>esmBot Command List</title>
+    <title>The Twitter Download Bot Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The changelog for esmBot">
-    <meta property="og:title" content="esmBot">
-    <meta property="og:site_name" content="esmBot">
-    <meta property="og:url" content="https://projectlounge.pw/esmBot/">
-    <meta property="og:description" content="esmBot is an entertainment-focused Discord bot with soundboard, utility, and image manipulation commands.">
+    <meta property="og:title" content="Essem">
+    <meta property="og:site_name" content="Essem">
+    <meta property="og:url" content="https://essem.space/downloadbots.html">
     <meta property="og:type" content="object">
-    <meta property="og:image" content="https://raw.githubusercontent.com/TheEssem/esmBot/master/esmbot.png">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
     <style>
@@ -30,7 +27,7 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
     <script>
-        fetch("https://gist.github.com/TheEssem/61f8117968996b686bff177df34ee9db/raw").then(function(response) {
+        fetch("/downloadbots.md").then(function(response) {
             var markdownContainer = document.getElementById("markdown");
             var loading = document.getElementById("loading");
             if (response.status !== 200) {
