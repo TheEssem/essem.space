@@ -28,7 +28,7 @@
     		    }
     	    }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const dev = urlParams.get("dev") || false;
@@ -40,9 +40,7 @@
               return;
             }
             response.text().then(function(text) {
-    	  var converter = new showdown.Converter();
-    	  converter.setFlavor("github");
-              var html = converter.makeHtml(text);
+              var html = marked(text);
     	  markdownContainer.removeChild(loading);
               markdownContainer.innerHTML = html;
     	});
