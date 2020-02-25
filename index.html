@@ -53,6 +53,8 @@
     .pan {
       animation: rotate 12s ease-in-out infinite;
       transform-style: preserve-3d;
+      z-index: -100;
+      position: absolute;
     }
 
     @keyframes rotate {
@@ -126,6 +128,7 @@
       flex-flow: row wrap;
       align-content: center;
       display: flex;
+      z-index: 100;
     }
   </style>
 </head>
