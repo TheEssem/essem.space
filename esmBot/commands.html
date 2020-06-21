@@ -1,59 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>esmBot Command List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The command list for esmBot">
-    <meta property="og:title" content="esmBot Command List">
-    <meta property="og:site_name" content="esmBot">
-    <meta property="og:url" content="https://essem.space/esmBot/commands.html">
-    <meta property="og:description" content="This is the command list for esmBot.">
-    <meta property="og:type" content="object">
-    <meta property="og:image" content="https://raw.githubusercontent.com/TheEssem/esmBot/master/esmbot.png">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
-    <style>
-        .markdown-body {
-    		    box-sizing: border-box;
-    		    min-width: 200px;
-    		    max-width: 980px;
-    		    margin: 0 auto;
-    		    padding: 45px;
-    	    }
-    
-    	    @media (max-width: 767px) {
-    		    .markdown-body {
-    			    padding: 15px;
-    		    }
-    	    }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const dev = urlParams.get("dev") || false;
-        fetch(dev ? "https://gist.githubusercontent.com/TheEssem/2c6836049787ed85a5db2647e9f70c77/raw" : "https://gist.githubusercontent.com/TheEssem/a0597f9603177a2df1d8398aa8b78729/raw").then(function(response) {
-            var markdownContainer = document.getElementById("markdown");
-            var loading = document.getElementById("loading");
-            if (response.status !== 200) {
-              loading.innerHTML = "Looks like there was a problem. Status Code: " + response.status;
-              return;
-            }
-            response.text().then(function(text) {
-              var html = marked(text);
-    	  markdownContainer.removeChild(loading);
-              markdownContainer.innerHTML = html;
-    	});
-          }).catch(function(err) {
-            console.error(err);
-          });
-    </script>
-</head>
-
-<body>
-    <article class="markdown-body" id="markdown">
-        <h1 id="loading">Loading...</h1>
-    </article>
-</body>
-
+<!DOCTYPE HTML>                                                                
+<html lang="en">                                                                
+    <head>                                                                      
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="0;url=https://projectlounge.pw/esmBot/help.html" />      
+        <link rel="canonical" href="https://projectlounge.pw/esmBot/help.html" />                    
+    </head>                                                                                                                                                                  
+    <body>                                                                      
+        <h1>                                                                    
+            This page has moved! <a href="https://projectlounge.pw/esmBot/help.html">https://projectlounge.pw/esmBot/help.html</a>
+        </h1>                                                                  
+    </body>                                                                    
 </html>
