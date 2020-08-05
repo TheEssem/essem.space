@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/essem
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://essem.space
+  * I am essem (https://keybase.io/essem) on keybase.
+  * I have a public key ASAZYYCije9ilxPD14xrcXZnDHWwfdq1Ql-PC-WikolHWgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120196180a28def629713c3d78c6b7176670c75b07ddab5425f8f0be5a29289475a0a",
+      "host": "keybase.io",
+      "kid": "0120196180a28def629713c3d78c6b7176670c75b07ddab5425f8f0be5a29289475a0a",
+      "uid": "0f499ad25c8be7a1ae684371f0dd0e19",
+      "username": "essem"
+    },
+    "merkle_root": {
+      "ctime": 1596643431,
+      "hash": "9530ba49dfa8dd9699a3ef6831e9fcdee1bcd21d5ce414cfa636f8dce10b3275340dd2185de7719fe0630c2ac7a767b2f3e7143bbf4c94922a519fbabe5c5a8c",
+      "hash_meta": "5c98c1ae56a3a87b09e97f6ef74bf5601db538406739e7502fb52a731b07411b",
+      "seqno": 17191965
+    },
+    "service": {
+      "entropy": "MXFX7i6mDLeuIhKqmK450HuW",
+      "hostname": "essem.space",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.1"
+  },
+  "ctime": 1596643438,
+  "expire_in": 504576000,
+  "prev": "3a186a076164c4843497b5415bbf29db4d3d9f59e1e9d4a9c67450a8226dd8cc",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGWGAoo3vYpcTw9eMa3F2Zwx1sH3atUJfjwvlopKJR1oKp3BheWxvYWTESpcCCsQgOhhqB2FkxIQ0l7VBW78p2009n1nh6dSpxnRQqCJt2MzEIPejCSvzn0A0jaTcP7iVAKVpSHnKH8ZhaRvhmI0hNjQWAgHCo3NpZ8RAlWvkEBlwygTC9l43AvCblOFoMfrZIhUZRYrZU7k9qbgewTaOZme3TXJkzCEg7JAfYvJVgT5MWfUhckfTue+uB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGU5hh7mYuJhceYYJdCCyyltmf8CSTgXG3VqqSbkmGNpo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/essem
+
+==================================================================
