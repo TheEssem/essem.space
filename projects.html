@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @font-face {
+        font-family: "Topaz";
+        src: url("fonts/Topaz.ttf");
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        background: #000;
+        perspective: 340px;
+        font-family: "Topaz", "Courier New", Courier, monospace;
+      }
+
+      .pan {
+        animation: rotate 12s ease-in-out infinite;
+        transform-style: preserve-3d;
+        z-index: -100;
+        position: absolute;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: translateX(-300px) translateY(300px);
+        }
+
+        50% {
+          transform: translateX(300px) translateY(500px);
+        }
+
+        100% {
+          transform: translateX(-300px) translateY(300px);
+        }
+      }
+
+      @keyframes fly {
+        from {
+          transform: translateZ(0px) translateY(0px);
+        }
+
+        to {
+          transform: translateZ(300px) translateY(300px);
+        }
+      }
+
+      @keyframes fade1 {
+        from {
+          opacity: 0.5;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade2 {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 0.5;
+        }
+      }
+
+      .window {
+        background-color: #bfb8bf;
+        border-style: outset;
+        padding: 2em;
+      }
+
+      .text {
+        text-align: center;
+        width: 100%;
+      }
+
+      .large {
+        font-size: 2em;
+      }
+
+      .small {
+        font-size: 1em;
+      }
+
+      .page {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-content: center;
+        display: flex;
+        z-index: 100;
+      }
+
+      .image {
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="window">
+        <p class="text large">Projects</p>
+        <p class="text small">
+          Here are some of the more notable projects I've worked on over the
+          years.
+        </p>
+        <ul>
+          <li>
+            <div>
+              <a href="https://github.com/esmBot/esmBot">esmBot</a> -
+              2018-current
+            </div>
+            esmBot is an entertainment-focused Discord bot used by over 250,000
+            communities to edit images, make memes, and play music. I originally
+            wrote it for Node.js using the
+            <a href="https://discord.js.org">Discord.JS</a> module to interact
+            with Discord, however in late 2019 I switched it to the
+            <a href="https://abal.moe/Eris">Eris</a> module instead. The current
+            codebase is a mix between JavaScript and C++, with C++ being used
+            for image processing with <a href="https://libvips.org">libvips</a>.
+          </li>
+          <li>
+            <div>
+              <a href="https://projectlounge.pw">projectlounge</a> -
+              2018-current
+            </div>
+            A site that essentially hosts utilities for esmBot as well as some
+            smaller web projects that I've made. I also run a
+            <a href="https://docs.searxng.org">SearXNG</a> instance on there.
+          </li>
+          <li>
+            <div>
+              <a href="https://wetdry.world">wetdry.world</a> - 2021-current
+            </div>
+            A <a href="https://joinmastodon.org">Mastodon</a> microblogging
+            server that I run, moderate, and maintain. Named after a stage from
+            a classic video game.
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/mozilla/twemoji-colr">twemoji-colr</a>
+              - 2017-2018
+            </div>
+            One of my first JS projects. Mozilla was looking to migrate from the
+            EmojiOne set for the fallback emojis in their Firefox browser due to
+            licensing issues; since Twemoji seemed like a good replacement (both
+            in terms of licensing and graphics), I decided to modify the build
+            scripts for Mozilla's emojione-colr to build with it instead. The
+            Twemoji 2.5.0 release proved to be helpful for this, since it
+            heavily simplified the source SVG files. I didn't have a proper
+            development/test environment at the time, so I used the GitHub
+            editor and Travis-CI to develop and test; this was admittedly a
+            horrible idea, and the commit history shows that. Nevertheless, I
+            still remember this project fondly.
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/TheEssem/this_vid2">this_vid2</a> -
+              2019
+            </div>
+            A Twitter bot created as a parody of video downloader bots that were
+            starting to become more prevalent at the time. When tagged, instead
+            of replying with a download link to the video, it would send an
+            edited, low-quality version of the video instead. I ran the original
+            bot for a week; however, after the source code release, many clones
+            started to appear. Not one of my proudest projects in retrospect,
+            although it does have its fans.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
