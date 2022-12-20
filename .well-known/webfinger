@@ -1,0 +1,25 @@
+{
+    "subject":"acct:esm@wetdry.world",
+    "aliases":
+    [
+        "https://wetdry.world/@esm",
+        "https://wetdry.world/users/esm"
+    ],
+    "links":
+    [
+        {
+            "rel":"http://webfinger.net/rel/profile-page",
+            "type":"text/html",
+            "href":"https://wetdry.world/@esm"
+        },
+        {
+            "rel":"self",
+            "type":"application/activity+json",
+            "href":"https://wetdry.world/users/esm"
+        },
+        {
+            "rel":"http://ostatus.org/schema/1.0/subscribe",
+            "template":"https://wetdry.world/authorize_interaction?uri={uri}"
+        }
+    ]
+}
