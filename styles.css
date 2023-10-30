@@ -1,0 +1,42 @@
+@font-face {
+  font-family: unscii16;
+  src: url("/fonts/unscii-16.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: rgb(158, 67, 67);
+  padding: 10px;
+  width: 100%;
+  display: inline-block;
+}
+
+.header-end {
+  float: right;
+}
+
+.badges {
+  text-align: center;
+}
+
+* {
+  font-family: unscii16, 'Courier New', Courier, monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+html, body {
+  background-color: #181a1b;
+  color: #e8e6e3;
+}
+
+a {
+  color: rgb(101, 243, 248);
+}

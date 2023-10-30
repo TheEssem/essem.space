@@ -1,17 +1,4 @@
-User-Agent: *
-Disallow: 
-Disallow: /css
-Disallow: /fonts
-Disallow: /js
-Allow: /esmBot
+User-agent: *
+Disallow:
 Allow: /
-
-User-Agent: Googlebot
-Allow: /js
-Allow: /css
-
-User-Agent: Googlebot-Image
-Allow: /images
-
-User-Agent: msnbot-media
-Allow: /images
+Sitemap: https://essem.space/sitemap.xml
