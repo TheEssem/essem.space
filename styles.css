@@ -29,7 +29,12 @@
 * {
   font-family: unscii16, 'Courier New', Courier, monospace;
   font-smooth: never;
+  text-transform: lowercase;
   -webkit-font-smoothing: none;
+}
+
+code {
+  text-transform: none;
 }
 
 html, body {
