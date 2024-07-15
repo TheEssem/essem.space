@@ -31,9 +31,27 @@
   font-smooth: never;
   text-transform: lowercase;
   -webkit-font-smoothing: none;
+  font-weight: normal;
 }
 
-code {
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+code, code > * {
+  background-color: rgb(33, 33, 33);
   text-transform: none;
 }
 
