@@ -6,7 +6,7 @@
       "gender": "Agender",
       "species": "Robot Cat",
       "description": "A seemingly sentient 35M-4T prototype model discovered by a group of hackers exploring an abandoned facility. It loves to mess around with things and can be very shy or very energetic depending on the situation. Their origins are still unknown.",
-      "avatar": "https://essem.space/images/esmpfpio.png",
+      "avatar": "https://essem.space/images/sona/esmpfpio.png",
       "avatarAlt": "A drawing depicting the head of an orange anthropomorphic cat-like creature. There are red and green status lights on one of the ears, and the eyes are circular screens with a light blue tint, small scanlines, and light blue irises.",
       "avatarAttribution": "ioletsgo",
       "birthdate": "1993-05-16T16:28:42+00:00",
@@ -16,7 +16,13 @@
         "#f00",
         "#30b4e6",
         "#366a83"
-      ]
+      ],
+      "gallery": [{
+        "image": "https://essem.space/images/sona/maplefullbody.png",
+        "imageAlt": "An illustration of an orange anthro cat. It has large blue eyes that look like electronic displays, and a little blue/cyan nose. It is looking at the viewer with a curious expression.",
+        "attribution": "maplebrownsgr",
+        "description": "Fullbody art"
+      }]
     }
   ]
 }
