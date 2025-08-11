@@ -4,7 +4,7 @@
       "name": "???",
       "pronouns": "They/It",
       "gender": "Agender",
-      "species": "Robot Cat",
+      "species": "Android Cat",
       "description": "A seemingly sentient 35M-4T prototype model discovered by a group of hackers exploring an abandoned facility. It loves to mess around with things and can be very shy or very energetic depending on the situation. Their origins are still unknown.",
       "avatar": "https://essem.space/images/sona/esmpfpio.png",
       "avatarAlt": "A drawing depicting the head of an orange anthropomorphic cat-like creature. There are red and green status lights on one of the ears, and the eyes are circular screens with a light blue tint, small scanlines, and light blue irises.",
@@ -18,10 +18,10 @@
         "#366a83"
       ],
       "gallery": [{
-        "image": "https://essem.space/images/sona/maplefullbody.png",
-        "imageAlt": "An illustration of an orange anthro cat. It has large blue eyes that look like electronic displays, and a little blue/cyan nose. It is looking at the viewer with a curious expression.",
-        "attribution": "maplebrownsgr",
-        "description": "Fullbody art"
+        "image": "https://essem.space/images/sona/steelcharsheet.png",
+        "imageAlt": "A character sheet depicting an orange android cat. It has blue eyes that look like electronic displays, a blue/cyan nose and tongue, two red and green LEDs at the edge of the right ear, a gold collar with a red and white checkered ball, an access panel on the back, visible seams on the elbows/ears/hands, and a transparent cap at the end of the tail that appears to blend in with the rest of the tail. There are multiple shots of it; one shows it standing and looking straight towards the viewer smiling, one shows its back facing towards the viewer, one shows a close-up of its face with it sticking out its tongue, and another shows it being pat on the head with a relaxed expression.",
+        "attribution": "Mintburrow",
+        "description": "Character sheet"
       }]
     }
   ]
