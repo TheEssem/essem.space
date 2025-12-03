@@ -29,18 +29,10 @@
 <p>The steps to add a custom theme between vanilla Mastodon and glitch-soc are different due to the latter adopting a "flavor"/"skin" system rather than Mastodon's theme system. On this page, I'll provide steps to add extra themes to both.</p>
 <h2 id="mastodon-vanilla">Mastodon (vanilla)</h2>
 <p>Mastodon's default themes are located under <code>app/javascript/styles</code>. Start by creating a new file in this directory with a name like <code>mytheme.scss</code>. Inside of it, you'll want to add a few lines:</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">mastodon/variables</span><span style="color:#89ddff;">&#39;;
-</span><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">application</span><span style="color:#89ddff;">&#39;;
+<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">application</span><span style="color:#89ddff;">&#39;;
 </span><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">mytheme/style</span><span style="color:#89ddff;">&#39;;
 </span></code></pre>
-<p>This will serve as a standard dark/"default" variant of your theme. If you want to add high-contrast/light variants, create two new files in the same directory with corresponding names (e.g. <code>mytheme-contrast.scss</code> and <code>mytheme-light.scss</code>) and copy the above lines into them as well. You'll need to change "mastodon" in the first line to the name of the color variant (<code>contrast</code>, <code>mastodon-light</code>) and add an extra line at the very bottom (replacing <code>&lt;variant&gt;</code> with the same variant name used on the top line):</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">&lt;variant&gt;/diff</span><span style="color:#89ddff;">&#39;;
-</span></code></pre>
-<blockquote>
-<p>Tip: In some cases (such as the light theme variant), you may need to add the following as well under the line containing <code>variables</code>:</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">&lt;variant&gt;/css_variables</span><span style="color:#89ddff;">&#39;;
-</span></code></pre>
-</blockquote>
+<p>This will serve as a standard dark/"default" variant of your theme. If you want to add high-contrast/light variants, create two new files in the same directory with corresponding names (e.g. <code>mytheme-contrast.scss</code> and <code>mytheme-light.scss</code>) and copy the above lines into them as well. You'll need to change "application" in the first line to the name of the base theme variant (<code>contrast</code>, <code>mastodon-light</code>).</p>
 <p>Once you've done that, create a new directory in <code>app/javascript/styles</code> named <code>mytheme</code> (if you want to use a different name, just change all occurrences of "mytheme" in this guide). In this directory, create a new file named <code>style.scss</code>. This is where your theme SCSS will go; feel free to change whatever in there.</p>
 <p>Next, open up <code>config/themes.yml</code>. Add a new line at the bottom and insert the following:</p>
 <pre data-lang="yaml" style="background-color:#212121;color:#eeffff;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#f07178;">mytheme</span><span style="color:#89ddff;">: </span><span style="color:#c3e88d;">styles/mytheme.scss
@@ -85,6 +77,7 @@
 <li>3/29/2025: Changed <code>@import</code> to <code>@use</code> since the former is deprecated and may throw errors. Removed the part in the glitch-soc section where <code>application</code> is renamed to <code>index</code>.</li>
 <li>5/25/2025: Updated to reflect the move from Webpack to Vite.</li>
 <li>6/14/2025: Updated to reflect glitch-soc restoring their pre-Vite skin handling</li>
+<li>12/3/2025: Updated to address the recent theme refactoring</li>
 </ul>
 
 
