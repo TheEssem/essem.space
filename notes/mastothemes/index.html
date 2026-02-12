@@ -25,59 +25,47 @@
   Adding server-side themes to a Mastodon (or glitch-soc) instance
 </h1>
 <p class="subtitle"><strong>2024-07-14</strong></p>
-<p>For a while now, <a href="https://wetdry.world">wetdry.world</a> (and the fork of Mastodon/glitch-soc it runs, <a href="https://github.com/TheEssem/mastodon">Chuckya</a>) has been using a custom theme by <a href="https://freeplay.floof.company/">Freeplay</a> called <a href="https://git.gay/freeplay/Mastodon-Modern">Mastodon Modern</a> by default, which gives the web interface a bit of a different look. However, despite vanilla Mastodon including an option in the instance settings to apply custom CSS overrides globally, this feature is not used to provide the theme; rather, the theme is available alongside the vanilla look and users are able to switch between the two.</p>
+<p>For a while now, <a rel="external" href="https://wetdry.world">wetdry.world</a> (and the fork of Mastodon/glitch-soc it runs, <a rel="external" href="https://github.com/TheEssem/mastodon">Chuckya</a>) has been using a custom theme by <a rel="external" href="https://freeplay.floof.company/">Freeplay</a> called <a rel="external" href="https://git.gay/freeplay/Mastodon-Modern">Mastodon Modern</a> by default, which gives the web interface a bit of a different look. However, despite vanilla Mastodon including an option in the instance settings to apply custom CSS overrides globally, this feature is not used to provide the theme; rather, the theme is available alongside the vanilla look and users are able to switch between the two.</p>
 <p>The steps to add a custom theme between vanilla Mastodon and glitch-soc are different due to the latter adopting a "flavor"/"skin" system rather than Mastodon's theme system. On this page, I'll provide steps to add extra themes to both.</p>
 <h2 id="mastodon-vanilla">Mastodon (vanilla)</h2>
 <p>Mastodon's default themes are located under <code>app/javascript/styles</code>. Start by creating a new file in this directory with a name like <code>mytheme.scss</code>. Inside of it, you'll want to add a few lines:</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">application</span><span style="color:#89ddff;">&#39;;
-</span><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">mytheme/style</span><span style="color:#89ddff;">&#39;;
-</span></code></pre>
-<p>This will serve as a standard dark/"default" variant of your theme. If you want to add high-contrast/light variants, create two new files in the same directory with corresponding names (e.g. <code>mytheme-contrast.scss</code> and <code>mytheme-light.scss</code>) and copy the above lines into them as well. You'll need to change "application" in the first line to the name of the base theme variant (<code>contrast</code>, <code>mastodon-light</code>).</p>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="scss"><span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">common</span><span style="color: #89DDFF;">&#39;;</span></span>
+<span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">mytheme/style</span><span style="color: #89DDFF;">&#39;;</span></span></code></pre>
+<p>Previous versions of Mastodon (v4.5 and below) required creating separate files for each individual variant (light/dark/contrast); however, newer versions have changed how colors are handled, so the above should be all that's necessary.</p>
 <p>Once you've done that, create a new directory in <code>app/javascript/styles</code> named <code>mytheme</code> (if you want to use a different name, just change all occurrences of "mytheme" in this guide). In this directory, create a new file named <code>style.scss</code>. This is where your theme SCSS will go; feel free to change whatever in there.</p>
 <p>Next, open up <code>config/themes.yml</code>. Add a new line at the bottom and insert the following:</p>
-<pre data-lang="yaml" style="background-color:#212121;color:#eeffff;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#f07178;">mytheme</span><span style="color:#89ddff;">: </span><span style="color:#c3e88d;">styles/mytheme.scss
-</span></code></pre>
-<p>Like before, if you want to add any variants of the theme, you'll need to add a new line for each one here.</p>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #F07178;">mytheme</span><span style="color: #89DDFF;">:</span><span style="color: #C3E88D;"> styles/mytheme.scss</span></span></code></pre>
 <p>Now to add a proper display name for the theme. This is done in the locale files in <code>config/locales</code>; if you don't know any other languages besides English, feel free to just modify <code>en.yml</code> (this goes for other languages as well). Under the <code>themes</code> section, there should already be some existing entries. Add one in the same section:</p>
-<pre data-lang="yaml" style="background-color:#212121;color:#eeffff;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#f07178;">mytheme</span><span style="color:#89ddff;">: </span><span style="color:#c3e88d;">My Theme (Dark)
-</span></code></pre>
-<p>Once again, you'll need to add a new entry for each variant. Now just run the command to rebuild assets like you would with any other update, and you should be set:</p>
-<pre data-lang="sh" style="background-color:#212121;color:#eeffff;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#82aaff;">$ RAILS_ENV=production bundle exec rails assets:precompile
-</span></code></pre>
-<h2 id="glitch-soc">glitch-soc</h2>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #F07178;">mytheme</span><span style="color: #89DDFF;">:</span><span style="color: #C3E88D;"> My Theme</span></span></code></pre>
+<p>Now just run the command to rebuild assets like you would with any other update, and you should be set:</p>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #FFCB6B;">$</span><span style="color: #C3E88D;"> RAILS_ENV=production bundle exec rails assets:precompile</span></span></code></pre><h2 id="glitch-soc">glitch-soc</h2>
 <p>When adding themes to glitch-soc, you may need to effectively add them twice; once for the vanilla flavor, and again for the glitch flavor. Due to large style differences between the two, I wouldn't recommend adding the exact same styles for both.</p>
 <h3 id="vanilla-flavor">Vanilla flavor</h3>
 <p>To add a new theme for the vanilla flavor, follow the steps described above for vanilla Mastodon; however, once you get to the part where you edit <code>config/themes.yml</code>, stop and come back here.</p>
-<p>glitch-soc uses a different system for defining themes (or "skins" as it refers to them). Head into <code>app/javascript/skins/vanilla</code> and create new directories with the same names as your theme and its variants. Create two files inside those directories: <code>common.scss</code> and <code>names.yml</code>. Put the following into <code>common.scss</code> (replacing <code>mytheme</code> with the theme/variant name):</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">@/styles/mytheme</span><span style="color:#89ddff;">&#39;;
-</span></code></pre>
+<p>glitch-soc uses a different system for defining themes (or "skins" as it refers to them). Head into <code>app/javascript/skins/vanilla</code> and create a new directory with the same name as your theme. Create two files inside those directories: <code>common.scss</code> and <code>names.yml</code>. Put the following into <code>common.scss</code> (replacing <code>mytheme</code> with the theme name):</p>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="scss"><span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">@/styles/mytheme</span><span style="color: #89DDFF;">&#39;;</span></span></code></pre>
 <p>Once you've done that, you'll need to set the display name in <code>names.yml</code>:</p>
-<pre data-lang="yml" style="background-color:#212121;color:#eeffff;" class="language-yml "><code class="language-yml" data-lang="yml"><span style="color:#f07178;">en</span><span style="color:#89ddff;">:
-</span><span>  </span><span style="color:#f07178;">skins</span><span style="color:#89ddff;">:
-</span><span>    </span><span style="color:#f07178;">vanilla</span><span style="color:#89ddff;">:
-</span><span>      </span><span style="color:#f07178;">mytheme</span><span style="color:#89ddff;">: </span><span style="color:#c3e88d;">My Theme (dark)
-</span></code></pre>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #F07178;">en</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #F07178;">  skins</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #F07178;">    vanilla</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #F07178;">      mytheme</span><span style="color: #89DDFF;">:</span><span style="color: #C3E88D;"> My Theme</span></span></code></pre>
 <p>To add more languages, copy/paste the block above into your file again and change <code>en</code> to your desired language code.</p>
 <p>After that, just rebuild the assets like usual, and it should appear in the skins under "Flavours" -&gt; "Vanilla Mastodon" in your preferences:</p>
-<pre data-lang="sh" style="background-color:#212121;color:#eeffff;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#82aaff;">$ RAILS_ENV=production bundle exec rails assets:precompile
-</span></code></pre>
-<h3 id="glitch-flavor">Glitch flavor</h3>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #FFCB6B;">$</span><span style="color: #C3E88D;"> RAILS_ENV=production bundle exec rails assets:precompile</span></span></code></pre><h3 id="glitch-flavor">Glitch flavor</h3>
 <p>The steps for adding a skin to the Glitch flavor are similar to the steps for the Vanilla flavor, except that the names and paths are slightly different. Follow the steps for the Vanilla flavor above, but replace the <code>app/javascript/styles</code> path with <code>app/javascript/flavours/glitch/styles</code> and the <code>app/javascript/skins/vanilla</code> path with <code>app/javascript/skins/glitch</code>.</p>
-<p>Some themes may include a separate SCSS file with fixes specifically for the Glitch flavor. In this case, put the SCSS file in the same directory as your theme's <code>style.scss</code> file and add a <code>@use</code> statement for it in <code>mytheme.scss</code> right before your flavor diff <code>@use</code> (or the last line of the file if it isn't there).</p>
+<p>Some themes may include a separate SCSS file with fixes specifically for the Glitch flavor. In this case, put the SCSS file in the same directory as your theme's <code>style.scss</code> file and add a <code>@use</code> statement for it at the end of <code>mytheme.scss</code>.</p>
 <p>In your skin's <code>common.scss</code> file, you'll need to put this instead:</p>
-<pre data-lang="scss" style="background-color:#212121;color:#eeffff;" class="language-scss "><code class="language-scss" data-lang="scss"><span style="font-style:italic;color:#89ddff;">@</span><span style="font-style:italic;color:#c792ea;">use </span><span style="color:#89ddff;">&#39;</span><span style="color:#c3e88d;">@/flavours/glitch/styles/mytheme</span><span style="color:#89ddff;">&#39;;
-</span></code></pre>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="scss"><span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">@/flavours/glitch/styles/mytheme</span><span style="color: #89DDFF;">&#39;;</span></span></code></pre>
 <p>In your skin's <code>names.yml</code> file, you'll need to replace <code>vanilla</code> with <code>glitch</code>. Once you've done all of that, just rebuild your assets like normal and the skins should appear under "Flavours" -&gt; "Glitch Edition":</p>
-<pre data-lang="sh" style="background-color:#212121;color:#eeffff;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#82aaff;">$ RAILS_ENV=production bundle exec rails assets:precompile
-</span></code></pre>
-<h2 id="you-re-done">You're done!</h2>
-<p>You should now have some extra themes added on your instance that users can choose from! If you have any further questions or issues, feel free to message me at <a href="https://wetdry.world/@esm">@esm@wetdry.world</a>.</p>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #FFCB6B;">$</span><span style="color: #C3E88D;"> RAILS_ENV=production bundle exec rails assets:precompile</span></span></code></pre><h2 id="you-re-done">You're done!</h2>
+<p>You should now have some extra themes added on your instance that users can choose from! If you have any further questions or issues, feel free to message me at <a rel="external" href="https://wetdry.world/@esm">@esm@wetdry.world</a>.</p>
 <h3 id="changelog">Changelog</h3>
 <ul>
 <li>3/29/2025: Changed <code>@import</code> to <code>@use</code> since the former is deprecated and may throw errors. Removed the part in the glitch-soc section where <code>application</code> is renamed to <code>index</code>.</li>
 <li>5/25/2025: Updated to reflect the move from Webpack to Vite.</li>
 <li>6/14/2025: Updated to reflect glitch-soc restoring their pre-Vite skin handling</li>
 <li>12/3/2025: Updated to address the recent theme refactoring</li>
+<li>2/11/2026: Updated to account for the merged theme/color system</li>
 </ul>
 
 

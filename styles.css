@@ -50,7 +50,7 @@ p {
   font-size: 16px;
 }
 
-code, code > * {
+code > span > * {
   background-color: rgb(33, 33, 33);
   text-transform: none;
 }
