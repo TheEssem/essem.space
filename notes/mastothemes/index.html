@@ -29,7 +29,7 @@
 <p>The steps to add a custom theme between vanilla Mastodon and glitch-soc are different due to the latter adopting a "flavor"/"skin" system rather than Mastodon's theme system. On this page, I'll provide steps to add extra themes to both.</p>
 <h2 id="mastodon-vanilla">Mastodon (vanilla)</h2>
 <p>Mastodon's default themes are located under <code>app/javascript/styles</code>. Start by creating a new file in this directory with a name like <code>mytheme.scss</code>. Inside of it, you'll want to add a few lines:</p>
-<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="scss"><span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">common</span><span style="color: #89DDFF;">&#39;;</span></span>
+<pre class="giallo" style="color: #EEFFFF; background-color: #212121;"><code data-lang="scss"><span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">application</span><span style="color: #89DDFF;">&#39;;</span></span>
 <span class="giallo-l"><span style="color: #89DDFF;font-style: italic;">@use</span><span style="color: #89DDFF;"> &#39;</span><span style="color: #C3E88D;">mytheme/style</span><span style="color: #89DDFF;">&#39;;</span></span></code></pre>
 <p>Previous versions of Mastodon (v4.5 and below) required creating separate files for each individual variant (light/dark/contrast); however, newer versions have changed how colors are handled, so the above should be all that's necessary.</p>
 <p>Once you've done that, create a new directory in <code>app/javascript/styles</code> named <code>mytheme</code> (if you want to use a different name, just change all occurrences of "mytheme" in this guide). In this directory, create a new file named <code>style.scss</code>. This is where your theme SCSS will go; feel free to change whatever in there.</p>
@@ -66,6 +66,7 @@
 <li>6/14/2025: Updated to reflect glitch-soc restoring their pre-Vite skin handling</li>
 <li>12/3/2025: Updated to address the recent theme refactoring</li>
 <li>2/11/2026: Updated to account for the merged theme/color system</li>
+<li>3/18/2026: Updated to reflect the removal of <code>common.scss</code></li>
 </ul>
 
 
